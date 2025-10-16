@@ -1,11 +1,12 @@
-base_url = "https://not-matthias.github.io/apollo/"
-title = "not-matthias"
-description = "This is an example description"
+base_url = "https://alex-song.com"
+title = "Alex Song"
+description = "Blog tracking daily learning"
 build_search_index = true
 generate_feeds = true
 compile_sass = true
 minify_html = true
-taxonomies = [{ name = "tags" }]
+theme = "apollo"
+taxonomies = [{ name = "tags" }, { name = "categories" }]
 
 [search]
 include_title = true
@@ -37,14 +38,16 @@ fediverse = false    # author attribution
 fediverse_creator = ""    # e.g. @user@instance
 
 menu = [
-    { name = "/posts", url = "/posts", weight = 1 },
-    { name = "/projects", url = "/projects", weight = 2 },
-    { name = "/tags", url = "/tags", weight = 3 },
+    { name = "Posts", url = "/posts", weight = 1 },
+    { name = "Tags", url = "/tags", weight = 1 },
+    { name = "Categories", url = "/categories", weight = 1 },
+    { name = "Archives", url = "/archives", weight = 1 },
+    { name = "Books", url = "/books", weight = 2 },
 ]
 
 socials = [
-    { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
-    { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
+    { name = "mail", url = "mailto:logensong@gmail.com", icon = "email" },
+    { name = "github", url = "https://github.com/ljsong/", icon = "github" },
 ]
 
 stylesheets = [
@@ -57,14 +60,3 @@ reverse = true
 
 [extra.analytics]
 enabled = false
-
-[extra.analytics.goatcounter]
-user = "your_user"
-host = "example.com" # default= goatcounter.com
-
-[extra.analytics.umami]
-website_id = "43929cd1-1e83...."
-host_url = "https://stats.mywebsite.com" # default: https://api-gateway.umami.dev/
-
-[extra.analytics.google]
-tracking_id = "G-XXXXXXXXXX"  # Your Google Analytics tracking ID

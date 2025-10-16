@@ -25,11 +25,24 @@
                 {% set show_comment = false %}
             {% endif %}
 
+            {% if page.extra.disqus_comment is defined %}
+                {% set show_disqus = page.extra.disqus_comment %}
+            {% else %}
+                {% set show_disqus = false %}
+            {% endif %}
+
+            {% if show_disqus %}
+                <div id="disqus_thread"></div>
+                {% include "_disqus_script.html" %}
+            {% endif %}
+
             {% if show_comment %}
                 <div class="giscus">
                 </div>
                 {% include "_giscus_script.html" %}
             {% endif %}
+
+            {% include "partials/footer.html" %}
         </div>
 
         <div class="right-content">
