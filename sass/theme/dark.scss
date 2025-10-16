@@ -12,6 +12,7 @@ $text-2: lighten($bg-0, 40%);
   --text-0: #{$text-0};
   --text-1: #{$text-1};
   --text-2: #{$text-2};
+  --text-pale-color: #848484;
 
   --bg-0: #{$bg-0};
   --bg-1: #{$bg-1};
@@ -19,7 +20,7 @@ $text-2: lighten($bg-0, 40%);
 
   --border-color: var(--bg-2);
 
-  --primary-color: #ef5350;
+  --primary-color: #6f8fd1;
   --hover-color: white;
 
   .social > img, .search-button > img {
