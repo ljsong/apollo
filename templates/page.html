@@ -83,6 +83,8 @@
                     {{ page.content | safe }}
                 </section>
             </article>
+
+
         </main>
     </div>
 {% endmacro content %}
@@ -98,3 +100,9 @@
         {% include "partials/toc.html" %}
     {% endif %}
 {% endblock right_content %}
+
+{% block left_content %}
+    <div class="back-to-top">
+        <a href="#top" title="Back to Top">↑ top</a>
+    </div>
+{% endblock left_content %}

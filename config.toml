@@ -42,8 +42,17 @@ menu = [
     { name = "Tags", url = "/tags", weight = 1 },
     { name = "Categories", url = "/categories", weight = 1 },
     { name = "Archives", url = "/archives", weight = 1 },
-    { name = "Books", url = "/books", weight = 2 },
+    { name = "Fun Stuff", url = "/stuff", weight = 2 },
 ]
+
+footer_copyright_author = "Alex Song"
+footer_copyright_credits = [
+  { name = "Zola", url = "https://www.getzola.org/"},
+  { name = "Apollo", url = "https://github.com/not-matthias/apollo"},
+]
+footer_copyright_lic = {name = "CC BY NC SA 4.0", url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"}
+footer_credits = true # Whether to show "Built with zola and serene" in footer
+
 
 socials = [
     { name = "mail", url = "mailto:logensong@gmail.com", icon = "email" },

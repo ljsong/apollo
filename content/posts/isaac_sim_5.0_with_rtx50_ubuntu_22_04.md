@@ -15,6 +15,7 @@ disqus_comment = true
 toc = true # show table-of-contents
 comment = true # enable comment
 copy = true # show copy button in code block
+footer = true
 
 +++
 
@@ -29,7 +30,7 @@ copy = true # show copy button in code block
 
 ![rendering problem](/images/rendering_issues_nvidia.png)
 
-以及NVIDA论坛对此问题的[discussions](https://forums.developer.nvidia.com/t/rtx5080-isaac-sim-4-5-ubuntu22-04-installed-error-on-cuda-compute-capability/326200)
+以及NVIDIA论坛对此问题的[discussions](https://forums.developer.nvidia.com/t/rtx5080-isaac-sim-4-5-ubuntu22-04-installed-error-on-cuda-compute-capability/326200)
 
 ![rendering issues](/images/discussion.png)
 
@@ -38,7 +39,7 @@ copy = true # show copy button in code block
 ![rendering issues](/images/solutions.png)
 
 ### Python版本问题
-由于我们需要使用Isaac Sim中的ROS2 Bridge同外部组件进行通信，但是Isaac Sim5.0所使用的Python版本是3.11而Ubuntu 22.04所自带的Python版本为3.10，在使用apt repository安装的二进制ROS包时会提示：
+由于我们需要使用Isaac Sim中的ROS2 Bridge同外部ROS组件进行通信，但是Isaac Sim5.0所使用的Python版本是3.11而Ubuntu 22.04所自带的Python版本为3.10，在使用apt repository安装的二进制ROS包时会提示：
 
 ![python version issues](/images/python_311_problems.png)
 
@@ -85,7 +86,7 @@ python -m pip install netifaces coverage lark hydra-core
 
 ### 特殊说明
 #### 跳过的package
-Ubuntu22.04中QT的版本是5，有些包需要省略掉，执行colcon build时需要跳过以下package：
+Ubuntu22.04中QT的版本是5，有些包需要省略掉，否则会编译失败，执行colcon build时跳过以下packages：
 
 1. qt_gui_cpp
 2. rqt_gui_cpp
@@ -93,9 +94,9 @@ Ubuntu22.04中QT的版本是5，有些包需要省略掉，执行colcon build时
 4. rqt
 
 #### 需要加入的package
-由于我们需要对外发布体素(VoxelGrid)消息，而VoxelGrid消息属于nav2_msgs，因此需要执行以下命令获取navigation的包：
+在和外部组件通信时会使用到`VoxelGrid`消息，而`VoxelGrid`消息属于nav2_msgs，因此需要执行以下命令获取navigation的包：
 
-参考以下表格，在下执行`git clone` 命令，同时请按照extra operations中的说明执行动作：
+参考以下表格，执行`git clone` 命令的同时需要按照extra operations中的说明执行动作：
 
 | Package Name                | Repo URL                                                     | Branch                                  | Extra Operations                                             | Clone path |
 | --------------------------- | ------------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------ | ---------- |

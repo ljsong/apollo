@@ -1,2 +1,9 @@
 tests/visual/responsive-visual.spec.ts-snapshots/*.png filter=lfs diff=lfs merge=lfs -text
 tests/visual/theme-visual.spec.ts-snapshots/*.png filter=lfs diff=lfs merge=lfs -text
+static/images/discussion.png filter=lfs diff=lfs merge=lfs -text
+static/images/python_311_problems.png filter=lfs diff=lfs merge=lfs -text
+static/images/rendering_issues_nvidia.png filter=lfs diff=lfs merge=lfs -text
+static/images/solutions.png filter=lfs diff=lfs merge=lfs -text
+static/images/talks filter=lfs diff=lfs merge=lfs -text
+static/images/blurry_problem.png filter=lfs diff=lfs merge=lfs -text
+static/images/books filter=lfs diff=lfs merge=lfs -text

@@ -1,3 +1,22 @@
 <footer>
-    Maintained by Alex Song
+    <div class="copyright">
+      Created &amp; maintained by {{config.extra.footer_copyright_author}} 
+      
+      {% if config.extra.footer_credits %}
+        with
+        {% for credit in config.extra.footer_copyright_credits %}
+          {% set arr_len = config.extra.footer_copyright_credits | length %}
+          <a href="{{credit.url}}" rel="noreferrer" target="_blank">{{credit.name}}</a>
+          {% if arr_len > 1 %}
+            {% if loop.index == arr_len - 1 %}
+              and
+            {% elif loop.index >= 1 and loop.index < arr_len - 1%}
+              ,
+            {% endif%}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      . Content licensed
+      <a href="{{config.extra.footer_copyright_lic.url}}" rel="noreferrer" target="_blank">{{config.extra.footer_copyright_lic.name}}</a>
+    </div>
 </footer>

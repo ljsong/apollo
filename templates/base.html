@@ -42,7 +42,15 @@
                 {% include "_giscus_script.html" %}
             {% endif %}
 
-            {% include "partials/footer.html" %}
+            {% if page.extra.footer is defined %}
+                {% set show_footer = page.extra.footer %}
+            {% else %}
+                {% set show_footer = false %}
+            {% endif %}
+
+            {% if show_footer %}
+                {% include "partials/footer.html" %}
+            {% endif %}
         </div>
 
         <div class="right-content">
@@ -50,5 +58,9 @@
             {% endblock right_content %}
         </div>
     </body>
+
+    <script>
+        Lightense('article img');
+    </script>
 
 </html>

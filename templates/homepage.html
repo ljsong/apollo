@@ -13,4 +13,7 @@
 
 {% block main_content %}
     {{ self::home_page(section=section) }}
+    {% if section.extra.footer %}
+        {% include "partials/footer.html" %}
+    {% endif %}
 {% endblock main_content %}

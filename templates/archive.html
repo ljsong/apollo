@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    {% block title %}
+        {{ post_macros::page_header(title=section.title) }}
+    {% endblock title %}
+
+        {% set post_section = get_section(path="posts/_index.md") %}
+        {% set posts = post_section.pages | filter(attribute="date") | sort(attribute="date", reverse=true) %}
+        {% set grouped = posts | group_by(attribute="date", format="%Y-%m") %}
+        {% for ym, items in grouped %}
+            <h2>{{ ym | date(format="%Y年%m月") }}</h2>
+            <ul>
+                {% for post in items %}
+                    <li class="archive-item">
+                        <a href="{{ post.permalink }}">{{ post.title }}</a>
+                        <span class="archive-date">{{ post.date | date(format="%Y-%m-%d") }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+{% endblock main_content %}
