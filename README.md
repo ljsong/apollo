@@ -41,26 +41,10 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 1. Download the theme
 
 ```
-git submodule add https://github.com/not-matthias/apollo themes/apollo
+git submodule add https://github.com/ljsong/apollo
 ```
 
-2. Add the following to the top of your `config.toml`
-
-```toml
-theme = "apollo"
-taxonomies = [{ name = "tags" }]
-
-[extra]
-theme = "auto"
-socials = [
-  # Configure socials here
-]
-menu = [
-  # Configure menu bar here
-]
-
-# See this for more options: https://github.com/not-matthias/apollo/blob/main/config.toml#L14
-```
+2. Copy the  `config.toml` to zola root directory
 
 3. Copy the example content
 
